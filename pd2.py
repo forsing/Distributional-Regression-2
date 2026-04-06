@@ -19,7 +19,7 @@ from lightgbm import LGBMRegressor
 from distribution_regressor import DistributionRegressor
 
 # Učitavanje stvarnih loto podataka iz CSV (bez random/sintetičkih podataka)
-csv_path = "/Users/4c/Desktop/GHQ/data/loto7hh_4592_k27.csv"
+csv_path = "/data/loto7hh_4592_k27.csv"
 df = pd.read_csv(csv_path)
 cols = ["Num1", "Num2", "Num3", "Num4", "Num5", "Num6", "Num7"]
 draws = df[cols].values.astype(float)
@@ -143,7 +143,7 @@ axes[2].legend()
 axes[2].grid(alpha=0.3)
 
 plt.tight_layout()
-plt.savefig('/Users/4c/Desktop/GHQ/kurzor/DistributionRegressor-main/examples/comparison_with_standard_regression.png', dpi=150, bbox_inches='tight')
+plt.savefig('/comparison_with_standard_regression.png', dpi=150, bbox_inches='tight')
 print("\n✓ Saved visualization to 'comparison_with_standard_regression.png'")
 
 print("\n" + "="*70)
@@ -205,8 +205,8 @@ print("Predicted next loto 7/39 combination (DistributionRegressor):", pred_dist
 print()
 """
 Predicted next loto 7/39 combination (Standard LightGBM): 
-[ 4  9 14 19 24 32 35]
+[ 4  x 14 y 24 z 35]
 
 Predicted next loto 7/39 combination (DistributionRegressor): 
-[ 5  9 15 20 24 30 35]
+[ 5  x 15 y 24 z 35]
 """
